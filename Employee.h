@@ -1,5 +1,5 @@
 #pragma once
-#include <string>s
+#include <string>
 
 class Employee {
     double salary;
@@ -17,4 +17,8 @@ public:
 
     double ChangeSalary(double newsalary);
     std::string ChangeName(std::string newname);
+
+    bool operator<(const Employee& other) const {
+        return this->name < other.name;
+    }
 };
