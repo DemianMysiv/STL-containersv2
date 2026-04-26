@@ -20,3 +20,15 @@ std::string Employee::ChangeName(std::string newname) {
     name = newname;
     return name;
 }
+
+bool Employee::operator<(const Employee& other) const {
+    return this->name < other.name;
+}
+
+int Employee::operator%(int divisor) const {
+    return static_cast<int>(this->salary) % divisor;
+}
+
+bool Employee::operator==(const Employee& other) const {
+    return this->name == other.name && this->salary == other.salary;
+}

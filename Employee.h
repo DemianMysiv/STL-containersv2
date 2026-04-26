@@ -18,7 +18,9 @@ public:
     double ChangeSalary(double newsalary);
     std::string ChangeName(std::string newname);
 
-    bool operator<(const Employee& other) const {
-        return this->name < other.name;
-    }
+
+    bool operator<(const Employee& other) const;
+    int operator%(int divisor) const;
+    bool operator==(const Employee& other) const;
+
 };
