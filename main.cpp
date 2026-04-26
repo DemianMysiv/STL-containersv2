@@ -147,6 +147,25 @@ int main() {
         cout << "Name: " << it->getName() << "\t | Salary: " << it->getSalary() << endl;
     }
 
+    array<int, 5> arr3 = {5, 2, 9, 1, 5};
+    array<int, 5> arr4 = {3, 4, 1, 2, 6};
+    
+    sortContainer(arr3);
+    cout << "--- Sorted arr3 ---" << endl;
+    for (auto it = arr3.begin(); it != arr3.end(); ++it) {
+        cout << *it << " ";
+    }
+
+    cout << "\n--- Sorted arr4 ---" << endl;
+    for (auto it = arr4.begin(); it != arr4.end(); ++it) {
+        cout << *it << " ";
+    }      
+
+    auto mergedArray2 = createSortedMergedArray(arr3, arr4);
+    cout << "\n--- Sorted and merged array of integers ---" << endl;
+    for (auto it = mergedArray2.begin(); it != mergedArray2.end(); ++it) {
+        cout << *it << " ";
+    }
 
 
 
