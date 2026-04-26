@@ -7,6 +7,21 @@
 
 using namespace std;
 
+template<typename T>
+
+void function1(std::vector<T> vec1, std::vector<T>& even, std::vector<T>& odd) {
+
+
+
+
+    for (auto vectorIterator = vec1.begin(); vectorIterator != vec1.end(); ++vectorIterator) {
+        if (*vectorIterator % 2 == 0) {
+            even.push_back(*vectorIterator);
+        } else {
+            odd.push_back(*vectorIterator);
+        }
+    }
+};
 
 
 template<typename T, size_t N>
@@ -109,7 +124,53 @@ int main() {
     }
 
 
-return 0;
 
+
+/*     std::vector<int> vec1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    std::vector<int> even;
+    std::vector<int> odd;
+
+
+
+    function1(vec1, even, odd);
+
+
+    cout<< "Even numbers: ";
+    for (auto it = even.begin(); it != even.end(); ++it) {
+        cout << *it << " ";
+    }
+
+    cout<< "\nOdd numbers: ";
+    for(auto it = odd.begin(); it != odd.end(); ++it) {
+        cout << *it << " ";
+    }
+
+ 
+
+
+    std::vector<Employee> employees = {
+        Employee("Demyan", 1000),
+        Employee("Yaroslav", 2045),
+        Employee("Oleksandr", 4000),
+        Employee("Oleh", 5000),
+        Employee("Ihor", 3333)
+    };
+
+    std::vector<Employee> even1;
+    std::vector<Employee> odd1;
+
+    function1(employees, even1, odd1);
+
+    cout<< "\nEven salary employees: "<< endl;
+    for (auto it = even1.begin(); it != even1.end(); ++it) {
+        cout << it->getName() << " "<< it->getSalary() << endl;
+    }
+
+    cout<< "\nOdd salary employees: "<< endl;
+    for(auto it = odd1.begin(); it != odd1.end(); ++it) {
+        cout << it->getName() << " "<< it->getSalary() << endl;
+    }   
+ */
+
+    return 0;
 };
-
