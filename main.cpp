@@ -23,6 +23,30 @@ void function1(std::vector<T> vec1, std::vector<T>& even, std::vector<T>& odd) {
     }
 };
 
+template<typename T>
+
+std::string functionfordeque(std::deque<T> deq) {
+    std::string result;
+   
+    auto deqbegin = deq.begin();
+    auto deqEnd = deq.end();
+    deqEnd--; 
+
+    result = "Palindrome";
+    for(int n = 0; n < deq.size()/2; n++) {
+    if( *(deqbegin) == *(deqEnd) ) {
+        deqbegin++;
+        deqEnd--; 
+        
+    } else {
+        result = "Not a palindrome";
+        break;
+    }
+    }
+
+return result;
+};
+
 
 template<typename T, size_t N>
 void sortContainer(std::array<T, N>& arr) {
@@ -172,5 +196,42 @@ int main() {
     }   
  */
 
+
+std::deque<Employee> employees = {
+    Employee("Demyan", 1000),
+    Employee("Yaroslav", 2045),
+    Employee("Oleksandr", 4000),
+    Employee("Oleh", 5000),
+    Employee("Ihor", 3333),
+    Employee("Oleh", 5000),
+    Employee("Oleksandr", 4000),
+    Employee("Yaroslav", 2045),
+    Employee("Demyan", 1000)
+};
+
+std::deque<Employee> employees2 = {
+    Employee("Demyan", 1000),
+    Employee("Yaroslav", 2045),
+    Employee("Oleksandr", 4000),
+    Employee("Oleh", 5000)
+};
+
+std::deque<int> deq1 = {1, 2, 3, 4, 5, 4, 3, 2, 1};
+std::deque<int> deq2 = {1, 2, 3, 4, 5};
+
+std::string result = functionfordeque(employees);
+cout << "The deque employees is: " << result << endl;
+
+std::string result2 = functionfordeque(employees2);
+cout << "The deque employees2 is: " << result2 << endl;
+
+std::string result3 = functionfordeque(deq1);
+cout << "The deque deq1 is: " << result3 << endl; 
+
+std::string result4 = functionfordeque(deq2);
+cout << "The deque deq2 is: " << result4 << endl;
+
+
     return 0;
+
 };
